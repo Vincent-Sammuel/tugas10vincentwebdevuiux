@@ -13,26 +13,26 @@
     <div class="loading-donut"></div>
   </div>
 
-<nav class="navbar" id="navbar">
-  <div class="logo">🍩 Donut Mamikoe</div>
+  <nav class="navbar" id="navbar">
+    <div class="logo">🍩 Donut Mamikoe</div>
+    
+    <div class="burger" id="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
 
-  <div class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#features">Keunggulan</a></li>
+      <li><a href="#products">Produk</a></li>
+      <li><a href="#testimonials">Testimoni</a></li>
+      <li><a href="#order" class="nav-cta">Pesan</a></li>
+    </ul>
+  </nav>
 
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">Tentang</a></li>
-    <li><a href="#features">Keunggulan</a></li>
-    <li><a href="#products">Produk</a></li>
-    <li><a href="#testimonials">Testimoni</a></li>
-    <li><a href="#order" class="nav-cta">Pesan</a></li>
-  </ul>
-</nav>
-
-  <header class="hero">
+  <header class="hero" id="home">
     <div class="hero-bg">
       <img src="images/donut-hero.png" alt="Background Donut" />
     </div>
@@ -113,8 +113,8 @@
   <h2>Siap Coba Donut Mamikoe?</h2>
   <p>Pesan sekarang dan nikmati promo spesial bulan ini!</p>
   <a href="https://wa.me/6285721248969?text=Halo%20Donut%20Mamikoe!%20Saya%20ingin%20pesan%20donat." 
-     class="cta-btn" 
-     target="_blank">
+      class="cta-btn" 
+      target="_blank">
     Order Sekarang
   </a>
 </section>
@@ -132,7 +132,6 @@
   <button class="scroll-top" id="scrollTop">↑</button>
 
 <script>
-  // Pastikan halaman selalu mulai dari atas saat refresh
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
@@ -190,6 +189,11 @@
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
+        if (window.innerWidth <= 768) {
+             navLinks.classList.remove('nav-active');
+             burger.classList.remove('toggle');
+        }
+
         target.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
@@ -197,6 +201,16 @@
       }
     });
   });
+
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+
+  if (burger) {
+      burger.addEventListener('click', () => {
+          navLinks.classList.toggle('nav-active');
+          burger.classList.toggle('toggle');
+      });
+  }
 
   const homeLink = document.querySelector('a[href="#home"]'); 
   if (homeLink) {
@@ -210,22 +224,6 @@
   logo.addEventListener('click', () => {
     location.reload();
   });
-
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("active");
-  navLinks.classList.toggle("show");
-});
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    menuToggle.classList.remove("active");
-    navLinks.classList.remove("show");
-  });
-});
-
 </script>
 
 </body>

@@ -33,66 +33,6 @@ body {
   box-shadow: 0 4px 30px rgba(0,0,0,0.12);
 }
 
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-  z-index: 200;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: #e63946;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-/* Saat aktif berubah menjadi X */
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* RESPONSIVE NAVBAR */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 60px;
-    right: -100%;
-    width: 70%;
-    height: 100vh;
-    background: #fff;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-    transition: right 0.3s ease;
-    z-index: 150;
-  }
-
-  .nav-links.show {
-    right: 0;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
-  }
-}
-
 .logo {
   font-weight: 800;
   font-size: 1.4rem;
@@ -100,6 +40,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
   animation: logoFloat 3s ease-in-out infinite;
+  z-index: 1001; 
 }
 
 .logo:hover {
@@ -183,6 +124,21 @@ body {
   background: linear-gradient(135deg, #d62828, #e63946);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
 }
 
 .hero {
@@ -686,8 +642,50 @@ footer a:hover {
     padding: 12px 20px;
   }
 
+  .burger {
+    display: block;
+  }
+
+  .burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: #e63946;
+  }
+  .burger.toggle .line2 {
+    opacity: 0;
+  }
+  .burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: #e63946;
+  }
+
   .nav-links {
-    display: none;
+    position: fixed;
+    right: -100%; 
+    top: 0;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75%; 
+    transition: right 0.4s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    padding-top: 60px;
+  }
+
+  .nav-links.nav-active {
+    right: 0;
+  }
+
+  .nav-links li {
+    opacity: 1; 
+    animation: none;
+    margin: 20px 0;
+  }
+  
+  .nav-links a {
+      font-size: 1.2rem;
   }
 
   .hero {
