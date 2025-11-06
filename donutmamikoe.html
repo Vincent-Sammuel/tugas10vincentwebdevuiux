@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donut Mamikoe - Donut Premium Terbaik</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍩</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-donut"></div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="logo">🍩 Donut Mamikoe</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#features">Keunggulan</a></li>
+      <li><a href="#products">Produk</a></li>
+      <li><a href="#testimonials">Testimoni</a></li>
+      <li><a href="#order" class="nav-cta">Pesan</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg">
+      <img src="images/donut-hero.png" alt="Background Donut" />
+    </div>
+    <div class="hero-content">
+      <h1>Donut Mamikoe</h1>
+      <p>Donut lezat dengan rasa premium — dibuat segar setiap hari.</p>
+      <a href="#order" class="cta-btn">🍩 Pesan Sekarang</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>Tentang Kami</h2>
+      <p>
+        Donut Mamikoe adalah tempat terbaik untuk menikmati berbagai varian donut dan pastry.
+        Kami menggunakan bahan berkualitas tinggi untuk menghadirkan rasa yang tak terlupakan.
+      </p>
+    </section>
+
+    <section id="features">
+      <h2>Kenapa Pilih Donut Mamikoe?</h2>
+      <div class="feature-list">
+        <div class="feature">
+          <h3>🍫 Varian Rasa Lengkap</h3>
+          <p>Dari coklat klasik hingga matcha dan stroberi sprinkle.</p>
+        </div>
+        <div class="feature">
+          <h3>🥚 Bahan Berkualitas</h3>
+          <p>Diproduksi dengan bahan segar dan tanpa pengawet.</p>
+        </div>
+        <div class="feature">
+          <h3>🚚 Pengiriman Cepat</h3>
+          <p>Pesanan Anda dikirim langsung ke rumah dengan aman.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <h2>Varian Donut Kami</h2>
+      <div class="product-list">
+        <div class="product">
+          <img src="images/donut-choco.jpg" alt="Donut Coklat">
+          <h3>Donut Coklat</h3>
+          <p>Donut lembut dengan lapisan coklat pekat di atasnya.</p>
+        </div>
+        <div class="product">
+          <img src="images/donut-matcha.jpg" alt="Donut Matcha">
+          <h3>Donut Matcha</h3>
+          <p>Rasakan sensasi matcha Jepang yang autentik.</p>
+        </div>
+        <div class="product">
+          <img src="images/donut-strawberry.jpg" alt="Donut Stroberi">
+          <h3>Donut Stroberi Sprinkle</h3>
+          <p>Donut manis dengan taburan sprinkle warna-warni.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h2>Apa Kata Mereka?</h2>
+      <div class="testimonial-list">
+        <div class="testimonial">
+          <p>"Donut terenak yang pernah saya coba! Teksturnya lembut dan rasa coklatnya pekat."</p>
+          <span>- Li Wei, Jakarta</span>
+        </div>
+        <div class="testimonial">
+          <p>"Anak-anak saya suka banget dengan varian stroberi sprinkle. Selalu repeat order!"</p>
+          <span>- Zhang Mei, Bandung</span>
+        </div>
+        <div class="testimonial">
+          <p>"Pelayanan cepat, pengiriman rapi, dan donutnya selalu fresh."</p>
+          <span>- Chen Hao, Surabaya</span>
+        </div>
+      </div>
+    </section>
+
+<section id="order">
+  <h2>Siap Coba Donut Mamikoe?</h2>
+  <p>Pesan sekarang dan nikmati promo spesial bulan ini!</p>
+  <a href="https://wa.me/6285721248969?text=Halo%20Donut%20Mamikoe!%20Saya%20ingin%20pesan%20donat." 
+     class="cta-btn" 
+     target="_blank">
+    Order Sekarang
+  </a>
+</section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Donut Mamikoe. All rights reserved.</p>
+  <p>Ikuti kami di 
+    <a href="https://instagram.com/ceong.woo" target="_blank">Instagram</a> | 
+    <a href="https://www.facebook.com/share/1GxKCd68aM/" target="_blank">Facebook</a> |  
+    <a href="https://tiktok.com/@centongg.nasii" target="_blank">TikTok</a>
+  </p>
+</footer>
+
+  <button class="scroll-top" id="scrollTop">↑</button>
+
+<script>
+  // Pastikan halaman selalu mulai dari atas saat refresh
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo({ top: 0 });
+
+  window.addEventListener('load', () => {
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    setTimeout(() => {
+      loadingOverlay.classList.add('hidden');
+    }, 800);
+  });
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  const sections = document.querySelectorAll('section');
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    sectionObserver.observe(section);
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  const homeLink = document.querySelector('a[href="#home"]'); 
+  if (homeLink) {
+    homeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  const logo = document.querySelector('.logo');
+  logo.addEventListener('click', () => {
+    location.reload();
+  });
+</script>
+
+</body>
+</html>
