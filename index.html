@@ -13,17 +13,24 @@
     <div class="loading-donut"></div>
   </div>
 
-  <nav class="navbar" id="navbar">
-    <div class="logo">🍩 Donut Mamikoe</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#features">Keunggulan</a></li>
-      <li><a href="#products">Produk</a></li>
-      <li><a href="#testimonials">Testimoni</a></li>
-      <li><a href="#order" class="nav-cta">Pesan</a></li>
-    </ul>
-  </nav>
+<nav class="navbar" id="navbar">
+  <div class="logo">🍩 Donut Mamikoe</div>
+
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#features">Keunggulan</a></li>
+    <li><a href="#products">Produk</a></li>
+    <li><a href="#testimonials">Testimoni</a></li>
+    <li><a href="#order" class="nav-cta">Pesan</a></li>
+  </ul>
+</nav>
 
   <header class="hero">
     <div class="hero-bg">
@@ -203,6 +210,22 @@
   logo.addEventListener('click', () => {
     location.reload();
   });
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("active");
+  navLinks.classList.toggle("show");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    menuToggle.classList.remove("active");
+    navLinks.classList.remove("show");
+  });
+});
+
 </script>
 
 </body>
